@@ -5,7 +5,6 @@ import React, { useEffect, useState } from "react"; // Import useState and useEf
 // Link is imported but not used, can be removed if not needed elsewhere
 // import Link from "next/link";
 import Card from "@/components/Card";
-import Trans from '@/components/Trans';
 
 // Define a type for the course data based on your Mongoose schema (optional but good practice)
 interface Course {
@@ -111,12 +110,12 @@ export default function Explore() {
             <h1 className="text-3xl font-extrabold text-center text-black tracking-tight md:text-4xl lg:text-5xl xl:text-6xl">
               <div className="relative inline-block">
                 <span className="z-10">
-                  <Trans>The{" "}
+                 The{" "}
                     <span className="text-customColor-5 bg-customColor-2 rounded-full px-3">
                       courses
                     </span>
                     <br />
-                    we offer!</Trans>
+                    we offer!
                 </span>
               </div>
             </h1>
