@@ -2,18 +2,19 @@
 
 import { useEffect, useState } from 'react';
 import { useLanguage } from './LanguageContext';
+import React from 'react';
 
 type TransProps = {
-  children: string;
+  children: React.ReactNode;
 };
 
 export const Trans = ({ children }: TransProps) => {
   const { lang } = useLanguage();
-  const [translated, setTranslated] = useState(children);
+  const [translated, setTranslated] = useState<React.ReactNode>(children);
 
   useEffect(() => {
     const fetchTranslation = async () => {
-      if (lang === 'en') {
+      if (typeof children !== 'string' || lang === 'en') {
         setTranslated(children);
         return;
       }

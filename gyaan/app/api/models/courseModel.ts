@@ -9,8 +9,8 @@ const assignmentSchema = new Schema({
     marks: {
         type: Number,
         required: true
-    },
-    dueDate: {
+    },  
+    dueDate: {  
         type: Date,
         required: true
     }
