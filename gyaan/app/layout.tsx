@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Montserrat, Montserrat_Alternates } from "next/font/google";
 import { Toaster } from "sonner";
 import "./globals.css";
+import { LanguageProvider } from "./context/LanguageContext";
 
 const inter = Montserrat_Alternates({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
@@ -23,7 +24,9 @@ Readonly<{
   return (
     <html lang="en">
       <body className={inter.className}>
+        <LanguageProvider>
         {children}
+        </LanguageProvider>
         <Toaster position="bottom-right" richColors expand={true} closeButton />
       </body>
     </html>

@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import axios from "axios";
 import { toast } from "sonner";
+import LanguageSelector from "./LanguageSelector";
 
 const menuItems = [
   { name: "Home", href: "/#" },
@@ -63,16 +64,19 @@ export default function Header() {
             <Image src='/logo1.png' alt="Logo" width={140} height={10} />
           </Link>
         </div>
-        <div className="hidden lg:block">
-          <ul className="inline-flex space-x-8">
-            {menuItems.map((item) => (
-              <li key={item.name}>
-                <Link href={item.href} className="text-md font-semibold text-gray-800 hover:text-gray-900">
-                  {item.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
+        <div className="inline-flex items-center space-x-8">
+          {menuItems.map((item) => (
+            <Link
+              key={item.name}
+              href={item.href}
+              className="text-md font-semibold text-gray-800 hover:text-gray-900"
+            >
+              {item.name}
+            </Link>
+          ))}
+          <div className="ml-2">
+            <LanguageSelector />
+          </div>
         </div>
         <div className="hidden lg:flex items-center space-x-4 relative">
           {username ? (
@@ -127,20 +131,19 @@ export default function Header() {
                     </button>
                   </div>
                 </div>
-                <div className="mt-6">
-                  <nav className="grid gap-y-4">
-                    {menuItems.map((item) => (
-                      <Link
-                        key={item.name}
-                        href={item.href}
-                        className="-m-3 flex items-center rounded-md p-3 text-md font-semibold hover:bg-gray-50"
-                      >
-                        <span className="ml-3 text-base font-medium text-gray-900">
-                          {item.name}
-                        </span>
-                      </Link>
-                    ))}
-                  </nav>
+                <div className="inline-flex items-center space-x-8">
+                  {menuItems.map((item) => (
+                    <Link
+                      key={item.name}
+                      href={item.href}
+                      className="text-md font-semibold text-gray-800 hover:text-gray-900"
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                  <div className="ml-2">
+                    <LanguageSelector />
+                  </div>
                 </div>
                 {username ? (
                   <div className="relative mt-4">

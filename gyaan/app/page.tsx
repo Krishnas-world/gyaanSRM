@@ -14,19 +14,7 @@ import Footer from '@/components/Footer';
 import { useRouter } from 'next/navigation';
 
 const PageContent = () => {
-  const router = useRouter();
 
-  useEffect(() => {
-    const checkUserData = () => {
-      const userData = localStorage.getItem('edu-cec_user');
-      if (userData) {
-        // User data exists, redirect to profile page
-        router.push('/profile/student');
-      }
-    };
-    checkUserData();
-  }, [router]);
-  
   const scrollToHeroOne = () => {
     const heroOneElement = document.getElementById('hero-one');
     if (heroOneElement) {

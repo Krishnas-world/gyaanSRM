@@ -3,6 +3,7 @@ import Image from "next/image";
 import React, { Suspense } from "react";
 import dynamic from 'next/dynamic';
 import Hero1 from "./utils/Hero1.json";
+import { Trans } from "@/app/context/Translator";
 
 // Dynamically import Lottie with no SSR
 const Lottie = dynamic(() => import('lottie-react'), {
@@ -19,13 +20,13 @@ export default function HeroOne() {
             <h1 className="text-3xl font-extrabold text-black tracking-tight md:text-4xl lg:text-5xl xl:text-6xl">
               <div className="relative inline-block">
                 <span className="relative z-10">
-                  Develop{" "}
+                  <Trans>Develop </Trans>
                   <span className="text-customColor-5 bg-customColor-2 rounded-full px-3">
-                    skills
+                  <Trans>skills</Trans>
                   </span>
                   <br />
-                  from the best <br />
-                  source
+                  <Trans>from the best <br />
+                  source</Trans>
                 </span>
                 <Image
                   src="/paper.png"
@@ -40,11 +41,11 @@ export default function HeroOne() {
               </div>
             </h1>
             <p className="mt-4 text-1xl text-gray-00 md:mt-6 md:text-lg lg:mt-8">
-              We aim to inspire a love for learning by creating an environment
+              <Trans>We aim to inspire a love for learning by creating an environment
               where students can explore their interests, develop new skills,
               and reach their full potential. Join us on this exciting
               educational adventure and discover the joy of learning with
-              Gyaan!
+              Gyaan!</Trans>
             </p>
             <button className="h-12 font-semibold w-36 mt-4 border-black border-2 p-2.5 bg-[#d0f0e4] hover:bg-[#79F7FF] hover:shadow-[2px_2px_0px_rgba(0,0,0,1)] active:bg-[#00E1EF] rounded-lg ">
               <span className="font-bold text-black">Join Now !</span>
